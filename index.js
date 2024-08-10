@@ -33,7 +33,7 @@ dotenv.config()
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: '*', // Allows all origins
+    origin: 'https://thriving-axolotl-b9f8f2.netlify.app', // Allows all origins
     credentials: true, // Allow credentials (cookies, authorization headers)
   }));
   
