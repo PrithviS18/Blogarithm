@@ -32,7 +32,7 @@ dotenv.config()
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: 'http://localhost:3000', // Replace with your frontend's URL
+    origin: '', // Replace with your frontend's URL
     credentials: true, // Allow credentials (cookies, authorization headers)
   }));
 
@@ -44,7 +44,7 @@ app.use ("/api/post",postRoute)
 app.use ("/api/comment",commentRoute)
 app.use("/uploads",express.static("./uploads"))
 
-app.listen(5000,()=>{
+app.listen(process.env.PORT || 5000,()=>{
     connectDB()
     console.log("App is running on port 5000")
 })
