@@ -9,6 +9,7 @@ const postRoute = require('./routes/posts')
 const commentRoute = require('./routes/comments')
 const Post = require('./models/Post')
 const cors = require('cors')
+const PORT = process.env.PORT || 5000
 
 // database
 const connectDB = async()=>{
@@ -44,7 +45,7 @@ app.use ("/api/post",postRoute)
 app.use ("/api/comment",commentRoute)
 app.use("/uploads",express.static("./uploads"))
 
-app.listen(process.env.PORT || 5000,()=>{
+app.listen(PORT, ()=>{
     connectDB()
     console.log("App is running on port 5000")
 })
