@@ -32,10 +32,12 @@ const connectDB = async()=>{
 dotenv.config()
 app.use(express.json());
 app.use(cookieParser());
+
 app.use(cors({
-    origin: 'https://thriving-axolotl-b9f8f2.netlify.app', // Allows all origins
-    credentials: true, // Allow credentials (cookies, authorization headers)
-  }));
+  origin: 'https://thriving-axolotl-b9f8f2.netlify.app', // Specify the exact origin
+  credentials: true, // Allow credentials (cookies, authorization headers)
+}));
+
   
 
 
