@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken')
 const verifytoken = require('../verifytoken')
 
 
+
 //REGISTER
 router.post("/register", async(req,res) =>{
     try{
