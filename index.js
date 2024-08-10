@@ -33,9 +33,10 @@ dotenv.config()
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: '', // Replace with your frontend's URL
+    origin: '*', // Allows all origins
     credentials: true, // Allow credentials (cookies, authorization headers)
   }));
+  
 
 
 
