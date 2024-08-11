@@ -33,7 +33,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-    origin: 'https://thriving-axolotl-b9f8f2.netlify.app', // Specify the exact origin
+    origin: 'https://soft-starburst-361af9.netlify.app', // Specify the exact origin
     credentials: true, // Allow credentials (cookies, authorization headers)
 }));
 
