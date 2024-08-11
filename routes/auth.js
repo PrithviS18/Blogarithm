@@ -48,7 +48,7 @@ router.post("/login", async(req,res) =>{
 //LOGOUT
 router.get('/logout',verifytoken,(req,res)=>{
     try{
-        res.clearCookie('token').status(200).json({message:"User logged Out"})
+        res.clearCookie('token',{secure:true}).status(200).json({message:"User logged Out"})
     }catch(err){
         res.status(500).json(err)
     }
