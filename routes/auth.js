@@ -48,7 +48,12 @@ router.post("/login", async(req,res) =>{
 //LOGOUT
 router.get('/logout',verifytoken,(req,res)=>{
     try{
-        res.clearCookie('token',{secure:true}).status(200).json({message:"User logged Out"})
+        res.clearCookie('token', {
+            path: '/', // Ensure the path is the same as when the cookie was set
+            secure: process.env.NODE_ENV === 'production', // Match the secure flag with the environment
+            sameSite: 'None', // Match the sameSite attribute
+            httpOnly: true, // Although httpOnly doesn't affect clearing, it should match the initial setting
+        }).status(200).json({message:"User logged Out"})
     }catch(err){
         res.status(500).json(err)
     }
